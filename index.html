@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/logo3.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu Map</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/css.css" />
+
+    <!-- <link rel="stylesheet" href="styles/newstyle.css" /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    /> -->
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+    .c1 {
+        padding: 0;
+        margin: 0;
+    }
+
+    .shift-down {
+        margin-top: 100px;
+        /* Ajustez la marge selon votre mise en page */
+        transition: margin 0.5s ease-in-out;
+        /* Ajoutez une transition fluide */
+    }
+
+    .hidden-card {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="cont d-flex justify-content-between align-items-center">
+        <a href="./index.php">
+            <img class="logo logo-left" src="images/logo3.svg" alt="" />
+        </a>
+        <div id="wrap" class="">
+            <form action="" autocomplete="on">
+                <input id="destinationInput" name="search" type="text" placeholder="Entrez la ville" />
+                <input id="search_submit" value="Rechercher" type="submit" />
+            </form>
+        </div>
+    </div>
+    <div class="justify-content-between align-items-center">
+        <marquee behavior="alternate" direction="down" width="100%" height="60">
+            <h4 class="c1 text-center">
+                Trouvez l'établissement le plus proche de vous
+            </h4>
+        </marquee>
+    </div>
+    <br />
+    <div class="container-fluid section-gray" style="overflow-y: scroll; overflow-x: hidden">
+        <div class="row">
+            <div class="col-sm-6 col-md-7">
+                <div class="cards-6">
+                    <div class="container">
+                        <div class="row" data-aos="fade-up">
+                            <div class="col-md-6" id="card1">
+                                <div class="card-1 card card-profile">
+                                    <div class="card-image">
+                                        <img class="img" src="images/room1.jpg" />
+                                        <div class="ftr">
+                                            <a href="https://web.facebook.com/profile.php?id=100068667947924"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i class="fa-brands fa-facebook" style="color: #fff"></i>
+                                            </a>
+
+                                            <a href="tel:/05248-85786"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-dribbble">
+                                                <i class="fa-brands fa-whatsapp" style="color: #fff"></i></a>
+                                            <a title="Filières disponibles"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i id="info-icon" class="fas fa-book-open info-icon"
+                                                    style="color: #fff"></i></a>
+                                            <a href="#" class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i class="fa-brands fa-instagram" style="color: #fff"></i></a>
+                                            <a title="Voir la video" onclick="lireVideo(1)"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i id="youtube-icon" class="fa-brands fa-youtube youtube-icon"
+                                                    style="color: #fff"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="table">
+                                        <h6 class="category text-info">ISTA Ouarzazate</h6>
+
+                                        <div class="d-flex flex-row gap-4 justify-content-center" id="counter">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <i class="fa-solid fa-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="100">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-building-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="90">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-book-open-reader text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="1200">
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card-clickable" onclick="showLocation('ISTA Ouarzazate');">
+                                            <div class="btnaper card-caption">Aperçu</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="card2">
+                                <div class="card-1 card card-profile">
+                                    <div class="card-image">
+                                        <img class="img" src="images/room12.jpg" />
+                                        <div class="ftr">
+                                            <a href="https://web.facebook.com/profile.php?id=100035925979967"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i class="fa-brands fa-facebook" style="color: #fff"></i>
+                                            </a>
+
+                                            <a href="tel:/05248-85786" class="svgbtn btn btn-just-icon btn-simple btn-dribbble">
+                                                <i class="fa-brands fa-whatsapp" style="color: #fff"></i></a>
+                                            <a title="Filières disponibles"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i id="info-icon" class="fas fa-book-open info-icon"
+                                                    style="color: #fff"></i></a>
+                                            <a href="#" class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i class="fa-brands fa-instagram" style="color: #fff"></i></a>
+                                            <a title="Voir la video" onclick="lireVideo(2)"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i id="youtube-icon" class="fa-brands fa-youtube youtube-icon"
+                                                    style="color: #fff"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="table">
+                                        <h6 class="category text-info">ISMC Ouarzazate</h6>
+
+                                        <div class="d-flex flex-row gap-4 justify-content-center" id="counter">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <i class="fa-solid fa-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="200">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-building-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="80">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-book-open-reader text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="900">
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card-clickable" onclick="showLocation('ISMC Ouarzazate');">
+                                            <div class="btnaper card-caption">Aperçu</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="card3">
+                                <div class="card-1 card card-profile">
+                                    <div class="card-image">
+                                        <img class="img" src="images/room2.jpg" />
+                                        <div class="ftr">
+                                            <a href="https://web.facebook.com/profile.php?id=100060131712750" class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i class="fa-brands fa-facebook" style="color: #fff"></i>
+                                            </a>
+
+                                            <a href="tel:/05248-47427"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-dribbble">
+                                                <i class="fa-brands fa-whatsapp" style="color: #fff"></i></a>
+                                            <a title="Filières disponibles"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i id="info-icon" class="fas fa-book-open info-icon"
+                                                    style="color: #fff"></i></a>
+                                            <a href="#" class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i class="fa-brands fa-instagram" style="color: #fff"></i></a>
+                                            <a title="Voir la video" onclick="lireVideo(3)"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i id="youtube-icon" class="fa-brands fa-youtube youtube-icon"
+                                                    style="color: #fff"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="table">
+                                        <h6 class="category text-info">ISTA Zagoura</h6>
+
+                                        <div class="d-flex flex-row gap-4 justify-content-center" id="counter">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <i class="fa-solid fa-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="50">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-building-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="20">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-book-open-reader text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="700">
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card-clickable" onclick="showLocation('ISTA Zagoura');">
+                                            <div class="btnaper card-caption">Aperçu</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="card4">
+                                <div class="card-1 card card-profile">
+                                    <div class="card-image">
+                                        <img class="img" src="images/room1.jpg" />
+                                        <div class="ftr">
+                                            <a href="https://web.facebook.com/istaassaka1" class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i class="fa-brands fa-facebook" style="color: #fff"></i>
+                                            </a>
+
+                                            <a href="tel:/05282-66448" class="svgbtn btn btn-just-icon btn-simple btn-dribbble">
+                                                <i class="fa-brands fa-whatsapp" style="color: #fff"></i></a>
+                                            <a title="Filières disponibles"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-twitter">
+                                                <i id="info-icon" class="fas fa-book-open info-icon"
+                                                    style="color: #fff"></i></a>
+                                            <a href="#" class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i class="fa-brands fa-instagram" style="color: #fff"></i></a>
+                                            <a title="Voir la video" onclick="lireVideo(4)"
+                                                class="svgbtn btn btn-just-icon btn-simple btn-instagram">
+                                                <i id="youtube-icon" class="fa-brands fa-youtube youtube-icon"
+                                                    style="color: #fff"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="table">
+                                        <h6 class="category text-info">ISTA Agadir</h6>
+
+                                        <div class="d-flex flex-row gap-4 justify-content-center" id="counter">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <i class="fa-solid fa-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="200">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-building-user text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="150">
+                                                    0
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <i class="fa-solid fa-book-open-reader text-secondary fs-5"></i>
+                                                <div class="counter text-center fw-bold text-secondary"
+                                                    data-target="2000">
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="card-clickable" onclick="showLocation('ISTA Agadir');">
+                                            <div class="btnaper card-caption">Aperçu</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-5" style="overflow-y: hidden">
+                <iframe id="mapFrame" src="https://maps.google.com/maps?q=ISTA ISMC ouazazate&output=embed" width="100%"
+                    height="100%" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <script>
+    //==============mapsearch===========
+    $(document).ready(function() {
+        $("form").submit(function(event) {
+            event.preventDefault();
+            var destination = $("#destinationInput").val();
+            var newSrc =
+                "https://maps.google.com/maps?q=" +
+                encodeURI(destination) +
+                "&output=embed";
+            $("#mapFrame").attr("src", newSrc);
+        });
+    });
+    //==========================
+    function drawChartDynamic() {
+        var chartContainers = document.querySelectorAll("#chart_div");
+        chartContainers.forEach(function(container, index) {
+            var data = new google.visualization.DataTable();
+            data.addColumn("string", "Topping");
+            data.addColumn("number", "Slices");
+            data.addRows([
+                ["مستوى التخصص", 550],
+                ["مستوى التأهيل ", 450],
+                ["مستوى التقني", 350],
+                ["مستوى التقني المتخصص", 650],
+            ]);
+
+            var options = {
+                width: 400,
+                height: 300,
+            };
+
+            var chart = new google.visualization.PieChart(container);
+            chart.draw(data, options);
+        });
+    }
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChartDynamic);
+    </script>
+
+    <div class="container">
+        <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn close dismiss-btn btn-danger" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true" class="btn btn-danger">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div id="divshow">
+                            <details>
+                                <summary>Niveau Technicien Spécialisé</summary>
+
+                                <h1 class="spntitle">Filières disponibles :</h1>
+                                <span class="">
+                                    <div class="floating-stack">
+                                        <dl>
+                                            <dt>A</dt>
+                                            <dd>Developpement Digital</dd>
+
+                                            <dt>B</dt>
+                                            <dd>Infrastructure Digital</dd>
+
+                                            <dt>C</dt>
+                                            <dd>Electromecanique des systemes automatisé</dd>
+
+                                            <dt>D</dt>
+                                            <dd>Gestion des Entreprises</dd>
+                                        </dl>
+                                    </div>
+                                </span>
+                            </details>
+                            <details>
+                                <summary>Niveau Technicien</summary>
+
+                                <h2>Filières disponibles :</h2>
+                                <div class="">
+                                    <div class="floating-stack">
+                                        <dl>
+                                            <dt>A</dt>
+                                            <dd>Réparation des Engins à Moteur</dd>
+
+                                            <dt>B</dt>
+                                            <dd>Froid Commercial et Climatisation</dd>
+
+                                            <dt>C</dt>
+                                            <dd>Electricité de Maintenance Industrielle</dd>
+
+                                            <dt>D</dt>
+                                            <dd>Secrétariat et Bureautique</dd>
+
+                                            <dt>E</dt>
+                                            <dd>Comptable d'Entreprises</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary>Niveau Qualification</summary>
+
+                                <h2>Filières disponibles :</h2>
+                                <div class="">
+                                    <div class="floating-stack">
+                                        <dl>
+                                            <dt>A</dt>
+                                            <dd>Coupe et Couture</dd>
+
+                                            <dt>B</dt>
+                                            <dd>Menuiserie Aluminium,Bois</dd>
+
+                                            <dt>C</dt>
+                                            <dd>Agent de Restauration</dd>
+
+                                            <dt>D</dt>
+                                            <dd>Réparateur de Véhicules Automobiles</dd>
+
+                                            <dt>E</dt>
+                                            <dd>Monteur Dépanneur Frigoriste</dd>
+
+                                            <dt>F</dt>
+                                            <dd>Electricité d`Entretien Industriel</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details>
+                                <summary>Niveau Specialisation</summary>
+
+                                <h2>Filières disponibles :</h2>
+                                <div class="">
+                                    <div class="floating-stack">
+                                        <dl>
+                                            <dt>A</dt>
+                                            <dd>Peintre Vitrier</dd>
+
+                                            <dt>B</dt>
+                                            <dd>Plomberie Sanitaire</dd>
+
+                                            <dt>C</dt>
+                                            <dd>Menuiserie Aluminium</dd>
+
+                                            <dt>D</dt>
+                                            <dd>Electricité de Bâtiment</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary>Consulter les statistiques</summary>
+                                <div class="">
+                                    <div class="floating-stack">
+                                        <dl>
+                                            <dd>
+                                                <div id="chart_div"></div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade custom-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modalvid" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="closeM2" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- <video
+              id="video1"
+              controls
+              class="video"
+              src="./images/ISTA.mp4"
+            ></video> -->
+                    <iframe id="video1" class="video" src="" title="YouTube video player" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <footer>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer-site-info">
+                                2023 ©
+                                <a href="https://abderrahim-belaid-123.github.io/contacter_EduMAp/"
+                                    target="_blank">DEVOWFS201</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <nav id="footer-navigation" class="site-navigation footer-navigation centered-box"
+                                role="navigation">
+                                <ul id="footer-menu" class="nav-menu styled clearfix inline-inside">
+                                    <li id="menu-item-27"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div id="footer-socials">
+                                <div class="socials inline-inside socials-colored">
+                                    <a href="#" target="_blank" title="Facebook" class="socials-item">
+                                        <i class="fab fa-facebook-f facebook"></i>
+                                    </a>
+
+                                    <a href="#" target="_blank" title="Instagram" class="socials-item">
+                                        <i class="fab fa-linkedin linkedin"></i>
+                                    </a>
+                                    <a href="#" target="_blank" title="YouTube" class="socials-item">
+                                        <i class="fab fa-youtube youtube"></i>
+                                    </a>
+                                    <a href="#" target="_blank" title="Telegram" class="socials-item">
+                                        <i class="fab fa-telegram telegram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+
+</html>
+
+</html>
+
+</html>
